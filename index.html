@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nén Ảnh Hàng Loạt (Dưới 500KB)</title>
+    <meta name="description"
+        content="Công cụ nén nhiều ảnh cùng lúc, đảm bảo dung lượng dưới 500KB ngay trên trình duyệt của bạn.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Nén Ảnh Cho Mít 🚀</h1>
+            <p>Chọn hoặc kéo thả ảnh vào đây để nén</p>
+        </header>
+
+        <main>
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-zone-content">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p>Kéo thả ảnh vào đây hoặc <strong>nhấn để chọn file</strong></p>
+                    <span class="support-text">Hỗ trợ JPG, PNG, WEBP</span>
+                </div>
+                <input type="file" id="file-input" multiple accept="image/jpeg, image/png, image/webp" hidden>
+            </div>
+
+            <div class="actions" id="actions-container" style="display: none;">
+                <button id="btn-compress" class="btn primary">Bắt Đầu Nén</button>
+                <button id="btn-download-all" class="btn secondary" disabled>Tải Tất Cả (.zip)</button>
+                <button id="btn-clear" class="btn outline">Xóa Hết</button>
+            </div>
+
+            <div id="image-list" class="image-list">
+                <!-- Các ảnh sẽ hiển thị ở đây -->
+            </div>
+        </main>
+
+        <footer>
+            <p>Leu leu mit</p>
+        </footer>
+    </div>
+
+    <!-- Thư viện hỗ trợ nén và đóng gói zip -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    <!-- Script chính -->
+    <script src="script.js"></script>
+</body>
+
+</html>
